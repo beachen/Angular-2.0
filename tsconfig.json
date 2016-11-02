@@ -9,6 +9,9 @@
     "removeComments": false,
     "noImplicitAny": false,
 	"outDir" : "target/scripts/"
-  }
+  }, 
+  "exclude": [
+    "node_modules"
+  ]
 }
 

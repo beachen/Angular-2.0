@@ -36,6 +36,10 @@
     "@types/node": "^6.0.45",
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "grunt": "~0.4.5",
+	"gulp": "^3.9.0",
+	"gulp-typescript": "^2.8.0",
+	"del": "^2.1.0"	
   }
 }
