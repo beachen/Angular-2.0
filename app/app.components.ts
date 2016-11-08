@@ -63,13 +63,29 @@ import { Component } from '@angular/core';
                  <input [(ngModel)]="club.name" placeholder="Klubb">
                  
                  <ul class="clubs">
-                     <li *ngFor="let club of clubs">
+                     <li *ngFor="let club of clubs" 
+                        (click)="onSelect(club)"
+                        [class.selected]="club === selectedClub">
+                        
                         <span class="badge">{{club.id}}</span> {{club.name}}
                       </li>
                  </ul>
                  
             </div>
-        `
+            
+            <!-- Details -->
+            <div *ngIf="selectedClub">
+                <h2>{{selectedClub.name}} details!</h2>
+                
+                <div>
+                    <label>id: </label>{{selectedClub.id}}
+                </div>
+                <div>
+                    <label>name: </label>
+                    <input [(ngModel)]="selectedClub.name" placeholder="Klubb"/>
+                </div> 
+            </div>         
+            `
 })
 
 //
@@ -86,6 +102,14 @@ export class AppComponent {
 
     // Many clubs
     clubs = CLUBS;
+
+    selectedClub: Club;
+
+
+    onSelect(club: Club): void {
+        this.selectedClub = club;
+        console.log(club.name)
+    }
 }
 
 /** Static content **/
