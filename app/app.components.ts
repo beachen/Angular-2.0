@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ClubService} from './club.service';
+
 
 @Component({
     selector: 'my-app',
@@ -73,28 +75,16 @@ import { Component } from '@angular/core';
                  
             </div>
             
-            <!-- Details 
-            <div *ngIf="selectedClub">
-                <h2>{{selectedClub.name}} details!</h2>
-                
-                <div>
-                    <label>id: </label>{{selectedClub.id}}
-                </div>
-                <div>
-                    <label>name: </label>
-                    <input [(ngModel)]="selectedClub.name" placeholder="Klubb"/>
-                </div> 
-            </div>  -->
-                   
             <club-detail [club]="selectedClub"></club-detail>       
-            `
+            `,
+    providers:[ClubService] // Tell this component to use injection for the club service
 })
 
 //
 // Application component
 // Everything in the component goes here..
 //
-export class AppComponent {
+export class AppComponent implements OnInit{
 
     // One club
     club: Club = {
@@ -102,10 +92,25 @@ export class AppComponent {
         name:"Mälarhöjden IK"
     };
 
-    // Many clubs
-    clubs = CLUBS;
+    // All the clubs
+    clubs : Club[];
 
     selectedClub: Club;
+
+    // Inject the clubService by the construcor
+    constructor(private clubService:ClubService){
+
+    }
+    getClubs() : void{
+
+        this.clubService.getClubs().then(clubs => this.clubs = clubs);
+    }
+
+    // ngOnInit interface
+    ngOnInit():void{
+        this.getClubs();
+    }
+
 
 
     onSelect(club: Club): void {
@@ -114,19 +119,12 @@ export class AppComponent {
     }
 }
 
-/** Static content **/
-const CLUBS: Club[] = [
-    { id: 1, name: 'Mälarhöjden IK' },
-    { id: 2, name: 'SALK' },
-    { id: 3, name: 'Solna TK' },
-    { id: 4, name: 'Stockholms TK' }
-];
 
 //
 // Class definition
 //
-export class Club{
-    id: number;
-    name:string;
-}
+//export class Club{
+//    id: number;
+//    name:string;
+//}
 

@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 // My components
 import { AppComponent}   from './app.components';
 import { ClubDetailComponent} from './club-detail.component';
+import {ClubService} from "./club.service";
 
 
 @NgModule({
   imports:      [ BrowserModule , FormsModule],
   declarations: [ AppComponent, ClubDetailComponent ],   // all components in our application module
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+
 
 })
 export class AppModule { }
