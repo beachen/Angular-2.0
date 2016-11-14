@@ -73,7 +73,7 @@ import { Component } from '@angular/core';
                  
             </div>
             
-            <!-- Details -->
+            <!-- Details 
             <div *ngIf="selectedClub">
                 <h2>{{selectedClub.name}} details!</h2>
                 
@@ -84,7 +84,9 @@ import { Component } from '@angular/core';
                     <label>name: </label>
                     <input [(ngModel)]="selectedClub.name" placeholder="Klubb"/>
                 </div> 
-            </div>         
+            </div>  -->
+                   
+            <club-detail [club]="selectedClub"></club-detail>       
             `
 })
 
