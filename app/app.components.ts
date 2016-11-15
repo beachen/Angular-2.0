@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ClubService} from './club.service';
+import {Club} from './club';
 
 
 @Component({
@@ -58,7 +59,7 @@ import {ClubService} from './club.service';
     // HTML goes here
     template: `
             <h1>{{title}}</h1>
-            <h2>Tennis klubbar i Stockholm</h2> 
+            <h2>Tåg</h2> 
             <h3>{{club.id}} {{club.name}}</h3>
             <div>
                 <label>Klubb:</label>
@@ -89,7 +90,7 @@ export class AppComponent implements OnInit{
     // One club
     club: Club = {
         id:1,
-        name:"Mälarhöjden IK"
+        name:"Stockholm C"
     };
 
     // All the clubs
