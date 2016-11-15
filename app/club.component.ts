@@ -4,7 +4,7 @@ import {Club} from './club';
 
 
 @Component({
-    selector: 'my-app',
+    selector: 'clubs',
     // Use backticks in order to write complete HTML (code completion),
     // CSS goes here
     styles: [`
@@ -85,7 +85,7 @@ import {Club} from './club';
 // Application component
 // Everything in the component goes here..
 //
-export class AppComponent implements OnInit{
+export class ClubComponent implements OnInit{
 
     // One club
     club: Club = {

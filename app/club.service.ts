@@ -9,4 +9,15 @@ export class ClubService{
         return Promise.resolve(CLUBS);
 
     }
+
+    /**
+     * Return one club for the requested id
+     * @param id
+     * @returns {Promise<Club>}
+     */
+    getClub(id:number) : Promise<Club>{
+        return this.getClubs()
+            .then(clubs =>
+                clubs.find(hero => hero.id === id));
+    }
 }
