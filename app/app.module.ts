@@ -7,37 +7,19 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 
 // My components
-import { AppComponent }         from './app.component';
-import { ClubComponent}         from './club.component';
-import { ClubDetailComponent}   from './club-detail.component';
-import {ClubService}            from "./club.service";
-import { DashboardComponent }        from './dashboard.component';
-
+import { AppComponent }             from './app.component';
+import { ClubComponent}             from './club.component';
+import { ClubDetailComponent}       from './club-detail.component';
+import {ClubService}                from "./club.service";
+import { DashboardComponent }       from './dashboard.component';
+import {AppRoutingModule}            from  './app.routing.module';
 
 @NgModule({
   imports:      [
       BrowserModule ,
       FormsModule,
-      RouterModule.forRoot([
-      {
-         path: 'clubs',
-         component: ClubComponent
-      },
-      {
-         path: 'dashboard',
-         component: DashboardComponent
-      },
-      {
-         path: '',
-         redirectTo: '/dashboard',
-         pathMatch: 'full'
-      },
-      {
-         // : = placeholder
-         path: 'detail/:id',
-         component: ClubDetailComponent
-      }
-  ])],
+      AppRoutingModule
+  ],
   // All components in our application module
   declarations: [
       AppComponent,
