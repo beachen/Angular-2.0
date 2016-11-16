@@ -36,7 +36,8 @@ export class ClubComponent implements OnInit{
     }
     getClubs() : void{
 
-        this.clubService.getClubs().then(clubs => this.clubs = clubs);
+        this.clubService.getClubs()
+            .then(clubs => this.clubs = clubs);
     }
 
     // ngOnInit interface
