@@ -8,8 +8,8 @@ import {ClubService} from "./club.service";
 
 @Component({
         selector: "club-detail",
-        styleUrls: ["/app/club-detail.component.css"],
-        templateUrl: "/app/club-detail.component.html"
+        styleUrls: ['app/club-detail.component.css'],
+        templateUrl: 'app/club-detail.component.html'
     }
 )
 export class ClubDetailComponent  implements  OnInit{

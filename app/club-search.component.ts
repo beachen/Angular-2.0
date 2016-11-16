@@ -6,10 +6,9 @@ import { ClubSearchService } from './club-search.service';
 import { Club } from './club';
 
 @Component({
-    moduleId: module.id,
     selector: 'club-search',
-    templateUrl: '/app/club-search.component.html',
-    styleUrls: [ '/app/club-search.component.css' ],
+    templateUrl: 'app/club-search.component.html',
+    styleUrls: [ 'app/club-search.component.css' ],
     providers: [ClubSearchService]
 })
 export class ClubSearchComponent implements OnInit {

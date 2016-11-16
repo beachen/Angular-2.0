@@ -5,11 +5,10 @@ import {Router}             from '@angular/router';
 
 
 @Component({
-    moduleId: module.id, // - styles and css is relative to the component?
     selector: 'clubs',
     // Use backticks in order to write complete HTML (code completion),
-    styleUrls: ['/app/club.component.css'],
-    templateUrl:'/app/club.component.html' ,
+    styleUrls: ['app/club.component.css'],
+    templateUrl:'app/club.component.html' ,
     providers:[ClubService] // Tell this component to use injection for the club service
 })
 
