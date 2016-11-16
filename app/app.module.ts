@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent }             from './app.component';
 import { ClubComponent}             from './club.component';
 import { ClubDetailComponent}       from './club-detail.component';
-import {ClubService}                from "./club.service";
+import { ClubService}                from "./club.service";
 import { DashboardComponent }       from './dashboard.component';
 
 // Navigation
@@ -18,6 +18,10 @@ import { HttpModule }    from '@angular/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+
+// Extentsions for observables.
+import './rxjs-extentions';
+import {ClubSearchComponent} from "./club-search.component";
 
 @NgModule({
   imports:      [
@@ -32,8 +36,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
       AppComponent,
       DashboardComponent,
       ClubComponent,
-      ClubDetailComponent ],
-  bootstrap:    [ AppComponent,  ],
+      ClubDetailComponent,
+      ClubSearchComponent ],
+  bootstrap:    [ AppComponent],
   providers:[ClubService]
 
 
